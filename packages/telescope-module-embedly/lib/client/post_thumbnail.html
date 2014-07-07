@@ -1,5 +1,7 @@
 <template name="postThumbnail">
-  {{#if thumbnailUrl}}
-    <img src="{{thumbnailUrl}}"/>
-  {{/if}}
+  <div class="{{templateClass}} {{position}} cell">
+    {{#if thumbnailUrl}}
+      <img src="{{thumbnailUrl}}"/>
+    {{/if}}
+  </div>
 </template>
