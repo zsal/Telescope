@@ -1,9 +1,11 @@
 <template name="postDiscuss">
-  <div class="{{templateClass}} {{position}} cell">
-    <a class="discuss-link go-to-comments" href="/posts/{{_id}}">
-      <i class="icon-comment"></i>
-      <span class="count">{{comments}}</span>
-      <span class="action">{{i18n 'Discuss'}}</span>
-    </a>
+  <div class="{{moduleClass}}">
+    {{#with post}}
+      <a class="discuss-link go-to-comments" href="/posts/{{_id}}">
+        <i class="icon-comment"></i>
+        <span class="count">{{comments}}</span>
+        <span class="action">{{i18n 'Discuss'}}</span>
+      </a>
+    {{/with}}
   </div>
 </template>

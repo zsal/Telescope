@@ -1,10 +1,12 @@
 <template name="postUpvote">
-  <div class="{{templateClass}} {{position}} cell">
-    <div class="post-rank"><span>{{oneBasedRank}}</span></div>
-    {{#if voted}}
-      <span class="upvote-link voted"><i class="icon-check"></i><span>{{i18n "Upvote"}}</span></span>
-    {{else}}
-      <a class="upvote-link not-voted" href="#"><i class="icon-up"></i><span>{{i18n "Upvote"}}</span></a>
-    {{/if}}
+  <div class="{{moduleClass}}">
+    {{#with post}}
+      <div class="post-rank"><span>{{oneBasedRank}}</span></div>
+      {{#if voted}}
+        <span class="upvote-link voted"><i class="icon-check"></i><span>{{i18n "Upvote"}}</span></span>
+      {{else}}
+        <a class="upvote-link not-voted" href="#"><i class="icon-up"></i><span>{{i18n "Upvote"}}</span></a>
+      {{/if}}
+    {{/with}}
   </div>
 </template>

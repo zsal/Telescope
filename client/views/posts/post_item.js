@@ -19,9 +19,10 @@ Template[getTemplate('post_item')].helpers({
     return filteredModules(['leftOfRight', 'right', 'rightOfRight']);
   },
   moduleContext: function () {
-    var moduleContext = _.extend(this, post);
-    moduleContext.templateClass = camelToDash(moduleContext.template);
-    moduleContext._id = null;
-    return moduleContext;
+    var module = this;
+    module.moduleClass = camelToDash(module.template) + ' ' + module.position + 'cell';
+    module.post = post;
+    console.log(post)
+    return module;
   }
 });
