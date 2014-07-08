@@ -1,7 +1,9 @@
-<template name="post_page">
+<template name="post_page">{{log this}}
   <div class="single-post grid">
     <div class="posts">
+      {{#with post}}
       {{> UI.dynamic template=post_item}}
+      {{/with}}
     </div>
     {{#if body}}
       {{> UI.dynamic template=post_body}}

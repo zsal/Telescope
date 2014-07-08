@@ -1,4 +1,7 @@
 Template[getTemplate('post_page')].helpers({
+  log: function (a) {
+    console.log(a)
+  },
   post_item: function () {
     return getTemplate('post_item');
   },
