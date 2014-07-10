@@ -1,14 +1,14 @@
-<template name="post_page">{{log this}}
+<template name="post_page">
   <div class="single-post grid">
     <div class="posts">
-      {{#with post}}
-      {{> UI.dynamic template=post_item}}
-      {{/with}}
+      {{#each post}}
+        {{> UI.dynamic template=post_item}}
+      {{/each}}
     </div>
     {{#if body}}
       {{> UI.dynamic template=post_body}}
     {{/if}}
     {{> UI.dynamic template=comment_form}}
-    {{> UI.dynamic template=comment_list}}
+    {{> UI.dynamic template=comment_list data=postComments}}
   </div>
 </template>
