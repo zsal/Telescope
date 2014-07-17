@@ -24,11 +24,5 @@ Template[getTemplate('posts_list')].helpers({
 });
 
 Template[getTemplate('posts_list')].rendered = function(){
-  var distanceFromTop = 0;
-  $('.post').each(function(){
-    distanceFromTop += $(this).height();
-  });
-  Session.set('distanceFromTop', distanceFromTop);
-  $('body').css('min-height',distanceFromTop+160);
 }
 

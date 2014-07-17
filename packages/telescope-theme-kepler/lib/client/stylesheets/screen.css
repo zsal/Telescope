@@ -1,0 +1,8 @@
+body{
+  background: teal;
+}
+
+.welcome-message{
+  text-align: center;
+  color: white;
+}

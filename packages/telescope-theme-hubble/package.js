@@ -1,4 +1,4 @@
-Package.describe("Telescope Hubble theme");
+Package.describe({summary: "Telescope Hubble theme"});
 
 Package.on_use(function (api) {
 
