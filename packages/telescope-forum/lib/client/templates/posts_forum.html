@@ -1,0 +1,23 @@
+<template name="postsForum">
+  {{#if postsLoaded}}
+    <div class="grid">
+      {{#each categories}}
+        <h2 class="posts-category-heading">{{name}}</h2>
+        <div class="posts-wrapper posts-category posts list grid-module">
+          {{#if posts}}
+            {{#each posts}}
+              {{> UI.dynamic template=post_item}}
+            {{/each}}
+          {{else}}
+            <p class="empty-category-notice">Sorry, this board is empty.</p>
+          {{/if}}
+        </div>
+        <a class="more-button grid-module" href="/category/{{slug}}"><span>{{i18n "View more"}}</span></a>
+      {{/each}}
+    </div>
+  {{else}}
+    <div class="grid loading-module">
+      {{>spinner}}
+    </div>
+  {{/if}}
+</template>

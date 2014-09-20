@@ -1,0 +1,11 @@
+.posts-category-heading{
+  font-size: 16px;
+  color: rgba(0,0,0,0.5);
+  margin: 20px 0 10px 0;
+}
+.empty-category-notice{
+  padding: 15px;
+}
+.posts-category .post:last-child{
+  border-radius: 0 0 3px 3px;
+}
