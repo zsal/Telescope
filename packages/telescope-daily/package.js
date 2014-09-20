@@ -1,13 +1,22 @@
-Package.describe({summary: "Telescope daily view"});
+Package.describe({
+  summary: "Telescope daily view",
+  version: "0.1.0",
+  name: "telescope-daily"
+});
 
 Package.onUse(function (api) {
 
-  api.use(['telescope-lib', 'telescope-base', 'meteorhacks:fast-render', 'meteorhacks:subs-manager'], ['client', 'server']);
+  api.use([
+    'telescope-lib',
+    'telescope-base',
+    'iron:router',
+    'meteorhacks:fast-render',
+    'meteorhacks:subs-manager'
+  ], ['client', 'server']);
 
   api.use([
     'jquery',
     'underscore',
-    'iron:router',
     'templating'
   ], 'client');
 
@@ -19,8 +28,6 @@ Package.onUse(function (api) {
     'lib/client/templates/posts_daily.js',
     'lib/client/stylesheets/daily.css',
     ], ['client']);
-
-  api.add_files(['lib/server/publications.js'], ['server']);
  
   api.export(['PostsDailyController']);
 });
