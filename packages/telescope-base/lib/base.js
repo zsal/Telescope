@@ -84,6 +84,22 @@ viewParameters.digest = function (terms) {
   };
 }
 
+viewParameters.nearby = function (terms) {
+  var radius = .0007;
+  return {
+    find: {
+      latitude: {
+        $gt: terms.latitude - radius, 
+        $lt: terms.latitude + radius
+      },
+      longitude: {
+        $gt: terms.longitude - radius,
+        $lt: terms.longitude + radius
+      }
+    }
+  };
+}
+
 
 heroModules = [];
 

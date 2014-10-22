@@ -10,6 +10,16 @@ postSchemaObject = {
   postedAt: {
     type: Date,
     optional: true
+  },
+  latitude: {
+    type: Number,
+    decimal: true,
+    optional: false
+  },
+  longitude: {
+    type: Number,
+    decimal: true,
+    optional: false
   },    
   title: {
     type: String,
@@ -170,6 +180,8 @@ Meteor.methods({
     var title = cleanUp(post.title),
         body = post.body,
         userId = this.userId,
+        latitude = post.latitude,
+        longitude = post.longitude,
         user = Meteor.users.findOne(userId),
         timeSinceLastPost=timeSinceLast(user, Posts),
         numberOfPostsInPast24Hours=numberOfItemsInPast24Hours(user, Posts),
@@ -217,6 +229,8 @@ Meteor.methods({
       title: title,
       body: body,
       userId: userId,
+      latitude: latitude,
+      longitude: longitude,
       author: getDisplayNameById(userId),
       upvotes: 0,
       downvotes: 0,

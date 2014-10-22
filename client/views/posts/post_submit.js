@@ -67,7 +67,9 @@ Template[getTemplate('post_submit')].events({
       body: instance.editor.exportFile(),
       sticky: $('#sticky').is(':checked'),
       userId: $('#postUser').val(),
-      status: parseInt($('input[name=status]:checked').val())
+      status: parseInt($('input[name=status]:checked').val()),
+      latitude: Session.get('plat'),
+      longitude: Session.get('plng')
     };
 
     // PostedAt

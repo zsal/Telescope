@@ -9,6 +9,15 @@ STATUS_PENDING=1;
 STATUS_APPROVED=2;
 STATUS_REJECTED=3;
 
+// Geo-Location
+Session.set('plat', -1);
+Session.set('plng', -1);
+
+var watchID = navigator.geolocation.watchPosition(function(position) {
+  Session.set('plat', position.coords.latitude);
+  Session.set('plng', position.coords.longitude);
+});
+
 adminNav = adminNav.concat([
   {
     route: 'posts_pending',
